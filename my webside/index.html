@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khanda Sahib | Sat Shri Akaal</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #f1c40f;
+        }
+        body {
+            background: #0a0a0c;
+            color: #e5e5e5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        #canvas-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+        }
+        .navbar {
+            background: rgba(10,10,12,0.9) !important;
+            backdrop-filter: blur(12px);
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .gold-text {
+            text-shadow: 0 0 40px rgba(241, 196, 15, 0.6);
+        }
+        .section {
+            padding: 100px 0;
+            background: rgba(10,10,12,0.95);
+        }
+        .note-card {
+            background: rgba(25,25,30,0.9);
+            border: 1px solid rgba(241,196,15,0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <div class="content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fs-3 fw-bold" href="#">Khanda Sahib</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#notes">Notes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div>
+                <h1 class="display-1 fw-bold gold-text">SAT SHRI AKAAL</h1>
+                <p class="lead fs-3 mt-3">ਖੰਡਾ ਸਾਹਿਬ ਦੀ ਪਵਿਤਰ ਯਾਦ ਵਿੱਚ</p>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <section id="notes" class="section">
+            <div class="container">
+                <h2 class="text-center mb-5 display-5">📝 Important Notes</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="note-card">
+                            <h4 class="mb-4">ਖੰਡਾ ਸਾਹਿਬ ਬਾਰੇ ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ</h4>
+                            <ul class="fs-5" style="line-height: 2.2;">
+                                <li>• ਖੰਡਾ ਸਾਹਿਬ ਸਿੱਖ ਧਰਮ ਦਾ ਇੱਕ ਪਵਿਤਰ ਚਿੰਨ੍ਹ ਹੈ।</li>
+                                <li>• ਇਸ ਵਿੱਚ ਤਲਵਾਰ, ਚੱਕਰ ਅਤੇ ਦੋ ਤਲਵਾਰਾਂ ਹਨ।</li>
+                                <li>• ਇਹ ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ ਜੀ ਦੀਆਂ ਬਾਣੀਆਂ ਅਤੇ ਸਿੱਖ ਰੂਪ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ।</li>
+                                <li>• ਖੰਡਾ ਸਾਹਿਬ ਤਾਕਤ, ਇਨਸਾਫ ਅਤੇ ਏਕਤਾ ਦਾ ਪ੍ਰਤੀਕ ਹੈ।</li>
+                            </ul>
+                            <hr class="my-4 border-warning">
+                            <p class="fst-italic">"ਖੰਡਾ ਸਾਹਿਬ ਨੂੰ ਆਪਣੇ ਦਿਲ ਵਿੱਚ ਵਸਾਓ, ਉਹ ਤੁਹਾਨੂੰ ਹਰ ਮੁਸੀਬਤ ਵਿੱਚ ਤਾਕਤ ਦੇਵੇਗਾ।"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Three.js 3D Khanda -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script>
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 6.8;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+
+        // Lights
+        scene.add(new THREE.AmbientLight(0xaaaaaa, 0.6));
+        const pointLight = new THREE.PointLight(0xffaa33, 2.8, 100);
+        pointLight.position.set(0, 10, 12);
+        scene.add(pointLight);
+
+        // Khanda
+        const textureLoader = new THREE.TextureLoader();
+        const khandaTexture = textureLoader.load('https://i.postimg.cc/wvXWfrQK/khanda-png-jpg.png');
+
+        const khanda = new THREE.Mesh(
+            new THREE.PlaneGeometry(7.2, 7.2),
+            new THREE.MeshStandardMaterial({
+                map: khandaTexture,
+                transparent: true,
+                roughness: 0.18,
+                metalness: 0.96,
+                color: 0xD4A017,
+                emissive: 0x3D2A00,
+                emissiveIntensity: 0.4
+            })
+        );
+        scene.add(khanda);
+
+        let mouseX = 0, mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const t = clock.getElapsedTime();
+            
+            // 360 Degree Rotation
+            khanda.rotation.y = t * 0.45;
+            khanda.rotation.x = Math.sin(t * 0.3) * 0.12 + mouseY * 0.25;
+            
+            // Gentle floating
+            khanda.position.y = Math.sin(t * 0.8) * 0.15;
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
