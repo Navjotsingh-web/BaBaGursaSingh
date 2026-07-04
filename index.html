@@ -33,8 +33,8 @@
             z-index: 10;
             pointer-events: none; /* Isse 3D model par mouse control sahi chalega */
         }
-        .content a, .content button, .content .note-card, .content iframe {
-            pointer-events: auto; /* Buttons, links aur maps kaam karte rahenge */
+        .content a, .content button, .content .note-card, .content iframe, .content .ratio {
+            pointer-events: auto; /* Buttons, links aur video container kaam karte rahenge */
         }
         h1, h2, h3, .navbar-brand {
             font-family: 'Noto Sans Gurmukhi', 'Playfair Display', serif;
@@ -79,19 +79,10 @@
         }
         .gallery-img {
             border: 2px solid var(--gold); 
-            max-height: 250px; 
+            max-height: 450px; 
             object-fit: cover; 
             width: 100%;
             border-radius: 12px;
-        }
-        /* Custom styling for text boxes inside gallery */
-        .gallery-text-box {
-            background: rgba(10, 10, 12, 0.6);
-            border-left: 4px solid var(--gold);
-            padding: 1rem;
-            margin-top: 1rem;
-            border-radius: 4px;
-            text-align: left;
         }
     </style>
 </head>
@@ -111,7 +102,7 @@
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#notes">History</a></li>
                         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
                     </ul>
                 </div>
             </div>
@@ -145,7 +136,7 @@
                                 ਖ਼ਬਰ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਤੱਕ ਪਹੁੰਚੀ, ਤਾਂ ਉਹਨਾਂ ਨੇ ਇਸ ਚੁਣੌਤੀ ਨੂੰ ਪ੍ਰਵਾਨ ਕੀਤਾ। ਉਹ ਆਪਣੇ ਘੋੜੇ 'ਤੇ ਸਵਾਰ ਹੋ ਕੇ ਜੰਗਲ ਵਿੱਚ ਗਏ ਅਤੇ
                                 ਸੁੱਤੇ ਹੋਏ ਸ਼ੇਰ ਨੂੰ ਲਲਕਾਰ ਕੇ ਬੜੀ ਬਹਾਦਰੀ ਨਾਲ ਉਸ ਦਾ ਮੁਕਾਬਲਾ ਕੀਤਾ ਅਤੇ ਉਸ ਨੂੰ ਮਾਰ ਮੁਕਾਇਆ। ਬਾਬਾ ਜੀ ਦੀ ਇਸ ਅਦੁੱਤੀ ਬਹਾਦਰੀ ਤੋਂ 
                                 ਪ੍ਰਸੰਨ ਹੋ ਕੇ ਮਹਾਰਾਜਾ ਰਣਜੀਤ ਸਿੰਘ ਜੀ ਨੇ ਉਹਨਾਂ ਨੂੰ ਤੋਹਫ਼ੇ ਵਜੋਂ ਇੱਕ ਉੱਤਮ ਘੋੜਾ ਦਿੱਤਾ ਅਤੇ ਕਿਹਾ ਕਿ ਸਵੇਰ ਤੋਂ ਸ਼ਾਮ ਤੱਕ ਇਹ ਘੋੜਾ ਜਿੰਨੀ ਵੀ 
-                                ਜ਼ਮੀਨ ਤੈਅ ਕਰੇਗਾ, ਉਹ ਸਾਰਾ ਇਲਾਕਾ ਤੁਹਾਡਾ ਹੋ ਜਾਵੇਗਾ। \n ਬਾਬਾ ਜੀ ਨੇ ਦਿਨ ਭਰ ਘੋੜਾ ਭਜਾਇਆ ਅਤੇ ਸ਼ਾਮ ਤੱਕ ਕਈ ਪਿੰਡਾਂ ਦਾ ਇਲਾਕਾ 
+                                ਜ਼ਮੀਨ ਤੈਅ ਕਰੇਗਾ, ਉਹ ਸਾਰਾ ਇਲਾਕਾ ਤੁਹਾਡਾ ਹੋ ਜਾਵੇਗਾ। \n ਬਾਬਾ ਜੀ ਨੇ ਦਿਨ ਭਰ ਘੋੜਾ ਭਜਾਇਆ AND ਸ਼ਾਮ ਤੱਕ ਕਈ ਪਿੰਡਾਂ ਦਾ ਇਲਾਕਾ 
                                 ਆਪਣੇ ਅਧੀਨ ਕਰ ਲਿਆ। ਇਹ ਦੇਖ ਕੇ ਦੁਸ਼ਮਣਾਂ ਦੇ ਮਨ ਵਿੱਚ ਈਰਖਾ ਅਤੇ ਫ਼ਿਕਰ ਪੈਦਾ ਹੋ ਗਿਆ ਕਿ ਬਾਬਾ ਜੀ ਸਾਡਾ ਇਲਾਕਾ ਵੀ ਮੱਲ ਲੈਣਗੇ।
                                 ਉਹਨਾਂ ਨੇ ਧੋਖੇ ਦੀ ਨੀਤੀ ਅਪਣਾਈ ਅਤੇ ਇੱਕ ਫ਼ੌਜੀ ਨੂੰ ਟੋਏ (ਖੱਡੇ) ਵਿੱਚ ਛੁਪਾ ਕੇ ਬਿਠਾ ਦਿੱਤਾ। ਜਦੋਂ ਬਾਬਾ ਜੀ ਉੱਥੋਂ ਲੰਘੇ, ਤਾਂ ਉਸ ਨੇ ਧੋਖੇ ਨਾਲ
                                 ਪਿੱਠ ਪਿੱਛੋਂ ਗੋਲੀ ਚਲਾ ਕੇ ਵਾਰ ਕੀਤਾ, ਜਿਸ ਨਾਲ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਸ਼ਹੀਦੀ ਪ੍ਰਾਪਤ ਕਰ ਗਏ। \n ਆਪ ਜੀ ਦੀ ਸ਼ਹੀਦੀ ਤੋਂ ਬਾਅਦ,
@@ -154,8 +145,7 @@
                                 ਅਤੇ ਹਰ ਸਾਲ 1 ਹਾੜ ਨੂੰ ਸਾਰੇ ਮੈਂਬਰ ਇਕੱਠੇ ਹੋ ਕੇ ਆਪ ਜੀ ਦੀ ਨਿੱਘੀ ਯਾਦ ਬਹੁਤ ਹੀ ਸ਼ਰਧਾ, ਸਤਿਕਾਰ ਅਤੇ ਧੂਮਧਾਮ ਨਾਲ ਮਨਾਉਂਦੇ ਹਨ। 
                                 ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਿਹ।
 
-
-ਪਰਿਵਾਰ ਅੱਜ ਵੀ ਉਨਾਂ ਦੀ ਯਾਦ ਵਿੱਚ ਇੱਕ ਹਾੜ ਨੂੰ ਉਹ ਸ਼ਹੀਦ ਹੋਏ ਸਨ ਤੇ ਅੱਜ ਵੀ ਉਨਾਂ ਦਾ ਪਰਿਵਾਰ ਇੱਕ ਹਾੜ ਨੂੰ ਉਹਨਾਂ ਦੀ ਯਾਦ ਮਨਾਉਂਦਾ ਹੈ ਅਤੇ ਅੱਜ ਉਹਨਾਂ ਦਾ ਪਰਿਵਾਰ ਭਾਰਤ ਦੀ ਧਰਤੀ ਤੇ ਵੀ ਰਹਿ ਰਿਹਾ ਹੈ ਕਈ ਪਿੰਡਾਂ ਦੇ ਵਿੱਚ ਵਸਦੇ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਦੇ ਪਰਿਵਾਰ ਦੇ ਮੈਂਬਰ ਇਕੱਠੇ ਹੋ ਕੇ ਉਹਨਾਂ ਦੀ ਯਾਦ ਮਨਾਉਂਦੇ ਹਨ। ਜੋ ਕਿ ਬੜੀ ਧੂਮਧਾਮ ਨਾਲ ਮਨਾਈ ਜਾਂਦੀ ਹੈ। ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਿਹ
+                                ਪਰਿਵਾਰ ਅੱਜ ਵੀ ਉਨਾਂ ਦੀ ਯਾਦ ਵਿੱਚ ਇੱਕ ਹਾੜ ਨੂੰ ਉਹ ਸ਼ਹੀਦ ਹੋਏ ਸਨ ਤੇ ਅੱਜ ਵੀ ਉਨਾਂ ਦਾ ਪਰਿਵਾਰ ਇੱਕ ਹਾੜ ਨੂੰ ਉਹਨਾਂ ਦੀ ਯਾਦ ਮਨਾਉਂਦਾ ਹੈ ਅਤੇ ਅੱਜ ਉਹਨਾਂ ਦਾ ਪਰਿਵਾਰ ਭਾਰਤ ਦੀ ਧਰਤੀ ਤੇ ਵੀ ਰਹਿ ਰਿਹਾ ਹੈ ਕਈ ਪਿੰਡਾਂ ਦੇ ਵਿੱਚ ਵਸਦੇ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਦੇ ਪਰਿਵਾਰ ਦੇ ਮੈਂਬਰ ਇਕੱਠੇ ਹੋ ਕੇ ਉਹਨਾਂ ਦੀ ਯਾਦ ਮਨਾਉਂਦੇ ਹਨ। ਜੋ ਕਿ ਬੜੀ ਧੂਮਧਾਮ ਨਾਲ ਮਨਾਈ ਜਾਂਦੀ ਹੈ। ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਿਹ
                             </ul>
                             <hr class="my-4 border-warning">
                             <p class="fst-italic text-light gurmukhi-font">"ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਦੀ ਲਾਸਾਨੀ ਯਾਦ ਨੂੰ ਕੋਟਿ-ਕੋਟਿ ਪ੍ਰਣਾਮ।"</p>
@@ -171,72 +161,49 @@
                 <h2 class="text-center mb-5 display-5 gurmukhi-font">🖼️ ਪਵਿੱਤਰ ਗੈਲਰੀ (Gallery)</h2>
                 
                 <div class="row g-4">
-                    <!-- Gallery Item 1 (Original) -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="note-card p-3 h-100 d-flex flex-column justify-content-between text-center">
-                            <div>
-                                <img src="gallery-image.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/500x500/19191e/f1c40f?text=Image+1'">
-                                <p class="text-muted mt-2 mb-0 gurmukhi-font fs-6">ਤਸਵੀਰ 1 (Image 1)</p>
-                            </div>
-                            <div class="gallery-text-box">
-                                <p class="gurmukhi-font fs-6 mb-0 text-light">ਇੱਥੇ ਤੁਸੀਂ ਇਸ ਪਹਿਲੀ ਤਸਵੀਰ ਨਾਲ ਸਬੰਧਿਤ ਮੁੱਖ ਇਤਿਹਾਸਕ ਵੇਰਵਾ ਲਿਖ ਸਕਦੇ ਹੋ।</p>
-                            </div>
+                    <!-- Gallery Item 1 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+1'">
                         </div>
                     </div>
 
-                    <!-- Gallery Item 2 (New 1) -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="note-card p-3 h-100 d-flex flex-column justify-content-between text-center">
-                            <div>
-                                <img src="gallery-image2.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/500x500/19191e/f1c40f?text=Image+2'">
-                                <p class="text-muted mt-2 mb-0 gurmukhi-font fs-6">ਤਸਵੀਰ 2 (Image 2)</p>
-                            </div>
-                            <div class="gallery-text-box">
-                                <p class="gurmukhi-font fs-6 mb-0 text-light">ਇੱਥੇ ਤੁਸੀਂ ਦੂਜੀ ਤਸਵੀਰ ਜਾਂ ਸਥਾਨ ਨਾਲ ਜੁੜੀ ਦੂਜੀ ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਦਰਜ ਕਰੋ।</p>
-                            </div>
+                    <!-- Gallery Item 2 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image2.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+2'">
                         </div>
                     </div>
 
-                    <!-- Gallery Item 3 (New 2) -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="note-card p-3 h-100 d-flex flex-column justify-content-between text-center">
-                            <div>
-                                <img src="gallery-image3.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/500x500/19191e/f1c40f?text=Image+3'">
-                                <p class="text-muted mt-2 mb-0 gurmukhi-font fs-6">ਤਸਵੀਰ 3 (Image 3)</p>
-                            </div>
-                            <div class="gallery-text-box">
-                                <p class="gurmukhi-font fs-6 mb-0 text-light">ਇੱਥੇ ਤਸਵੀਰ ਨਾਲ ਸਬੰਧਿਤ ਕੋਈ ਹੋਰ ਵਾਧੂ ਇਤਿਹਾਸਕ ਪ੍ਰਸੰਗ ਜਾਂ ਸੰਦੇਸ਼ ਲਿਖਿਆ ਜਾ ਸਕਦਾ ਹੈ।</p>
-                            </div>
+                    <!-- Gallery Item 3 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image3.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+3'">
                         </div>
                     </div>
 
-                    <!-- Gallery Item 4 (New 3) -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="note-card p-3 h-100 d-flex flex-column justify-content-between text-center">
-                            <div>
-                                <img src="gallery-image4.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/500x500/19191e/f1c40f?text=Image+4'">
-                                <p class="text-muted mt-2 mb-0 gurmukhi-font fs-6">ਤਸਵੀਰ 4 (Image 4)</p>
-                            </div>
-                            <div class="gallery-text-box">
-                                <p class="gurmukhi-font fs-6 mb-0 text-light">ਇੱਥੇ ਚੌਥੀ ਤਸਵੀਰ ਦੇ ਇਤਿਹਾਸ ਅਤੇ ਉਸਦੀ ਮਹੱਤਤਾ ਬਾਰੇ ਸੰਖੇਪ ਜਾਣਕਾਰੀ ਦਰਜ ਕਰੋ।</p>
-                            </div>
+                    <!-- Gallery Item 4 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image4.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+4'">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Map Section -->
-        <section id="map" class="section">
+        <!-- Video Section (Replaced Map) -->
+        <section id="video" class="section">
             <div class="container">
-                <h2 class="text-center mb-5 display-5 gurmukhi-font">📍 ਇਤਿਹਾਸਕ ਅਸਥਾਨ (Location Map)</h2>
+                <h2 class="text-center mb-5 display-5 gurmukhi-font">📹 ਵੀਡੀਓ (Historical Video)</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="note-card p-2" style="overflow: hidden; border-radius: 20px;">
-                            <!-- Google Maps Embed Link (Sri Harmandir Sahib as placeholder, change it if needed) -->
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.7974768395564!2d74.87387347632617!3d31.62002164218698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f131!3m3!1m2!1s0x39196b63a232f057%3A0x6b864a7c067e4167!2sSri%20Harmandir%20Sahib!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
-                                width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+                            <!-- Responsive Big Video Box (16:9 Aspect Ratio) -->
+                            <div class="ratio ratio-16x9">
+                                <!-- Aap apni video file ka path 'src' mai add kar sakte hain ya YouTube link embed kar sakte hain -->
+                                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="History Video" allowfullscreen style="border-radius: 15px;"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
