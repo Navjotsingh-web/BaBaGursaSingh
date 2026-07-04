@@ -1,198 +1,280 @@
 <!DOCTYPE html>
 <html lang="pa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ | Sat Shri Akaal</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Gurmukhi:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root { --gold: #f1c40f; }
-        body {
-            background: #0a0a0c;
-            color: #e5e5e5;
-            font-family: 'Inter', 'Noto Sans Gurmukhi', sans-serif;
-            overflow-x: hidden;
-        }
-        #canvas-container {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 1;
-        }
-        .content {
-            position: relative;
-            z-index: 10;
-            pointer-events: none;
-        }
-        .content a, .content button, .content .note-card, .content iframe, .content .ratio {
-            pointer-events: auto;
-        }
-        h1, h2, h3, .navbar-brand {
-            font-family: 'Noto Sans Gurmukhi', 'Playfair Display', serif;
-            color: var(--gold);
-        }
-        .navbar {
-            background: rgba(10,10,12,0.9) !important;
-            backdrop-filter: blur(12px);
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .gold-text {
-            color: var(--gold);
-            text-shadow: 0 0 40px rgba(241, 196, 15, 0.6);
-        }
-        .section { padding: 100px 0; background: rgba(10,10,12,0.95); }
-        .note-card {
-            background: rgba(25,25,30,0.9);
-            border: 1px solid rgba(241,196,15,0.3);
-            border-radius: 20px;
-            padding: 2.5rem;
-        }
-        .gallery-img {
-            border: 2px solid var(--gold); 
-            max-height: 450px; 
-            object-fit: cover; 
-            width: 100%;
-            border-radius: 12px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ | Sat Shri Akaal</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Google Fonts (Added Noto Sans Gurmukhi for Best Punjabi Look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Gurmukhi:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #f1c40f;
+        }
+        body {
+            background: #0a0a0c;
+            color: #e5e5e5;
+            font-family: 'Inter', 'Noto Sans Gurmukhi', sans-serif;
+            overflow-x: hidden;
+        }
+        #canvas-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            pointer-events: none; /* Isse 3D model par mouse control sahi chalega */
+        }
+        .content a, .content button, .content .note-card, .content iframe, .content .ratio {
+            pointer-events: auto; /* Buttons, links aur video container kaam karte rahenge */
+        }
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Noto Sans Gurmukhi', 'Playfair Display', serif;
+            color: var(--gold);
+        }
+        .navbar {
+            background: rgba(10,10,12,0.9) !important;
+            backdrop-filter: blur(12px);
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .gold-text {
+            color: var(--gold);
+            font-family: 'Noto Sans Gurmukhi', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 40px rgba(241, 196, 15, 0.6);
+        }
+        .punjabi-subtitle {
+            color: #ffffff;
+            font-family: 'Noto Sans Gurmukhi', sans-serif;
+            font-weight: 500;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+        .section {
+            padding: 100px 0;
+            background: rgba(10,10,12,0.95);
+        }
+        .note-card {
+            background: rgba(25,25,30,0.9);
+            border: 1px solid rgba(241,196,15,0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+        .gurmukhi-font {
+            font-family: 'Noto Sans Gurmukhi', sans-serif;
+        }
+        .gallery-img {
+            border: 2px solid var(--gold); 
+            max-height: 450px; 
+            object-fit: cover; 
+            width: 100%;
+            border-radius: 12px;
+        }
+    </style>
 </head>
 <body>
-    <div id="canvas-container"></div>
+    <div id="canvas-container"></div>
 
-    <div class="content">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand fs-3 fw-bold" href="#">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#notes">History</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <div class="content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fs-3 fw-bold gurmukhi-font" href="#">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#notes">History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-        <section id="home" class="hero">
-            <div>
-                <h1 class="display-2 gold-text">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ</h1>
-                <p class="lead fs-2 mt-4 text-white">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਦਾ ਮਹਾਨ ਇਤਿਹਾਸ</p>
-            </div>
-        </section>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div>
+                <h1 class="display-2 gold-text">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ</h1>
+                <p class="lead fs-2 mt-4 punjabi-subtitle">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਦਾ ਮਹਾਨ ਇਤਿਹਾਸ</p>
+            </div>
+        </section>
 
-        <section id="notes" class="section">
-            <div class="container">
-                <h2 class="text-center mb-5 display-5">📝 ਮਹਾਨ ਇਤਿਹਾਸ</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="note-card">
-                            <h4 class="mb-4 text-warning">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਬਾਰੇ ਜਾਣਕਾਰੀ</h4>
-                            <p class="fs-5" style="line-height: 2.2;">
-                                ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਿਹ। ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਦਾ ਜਨਮ ਪਾਕਿਸਤਾਨ ਦੇ ਜ਼ਿਲ੍ਹਾ ਲਾਹੌਰ ਨੇੜੇ ਲੱਗਦੇ ਪਿੰਡ ਚੱਕ ਮੁਹੰਮਦੀ ਵਲੀ ਵਾਲਾ ਵਿਖੇ ਹੋਇਆ। 
-                                ਬਾਬਾ ਜੀ ਸ਼ੇਰ-ਏ-ਪੰਜਾਬ ਮਹਾਰਾਜਾ ਰਣਜੀਤ ਸਿੰਘ ਜੀ ਦੇ ਸਮੇਂ ਹੋਏ ਹਨ। ਇੱਕ ਖੂੰਖਾਰ ਸ਼ੇਰ ਨੂੰ ਮਾਰਨ ਦੀ ਚੁਣੌਤੀ ਨੂੰ ਪ੍ਰਵਾਨ ਕਰਕੇ, ਬਾਬਾ ਜੀ ਨੇ ਬਹਾਦਰੀ ਦਾ ਪ੍ਰਦਰਸ਼ਨ ਕੀਤਾ। 
-                                ਮਹਾਰਾਜਾ ਰਣਜੀਤ ਸਿੰਘ ਜੀ ਨੇ ਬਾਬਾ ਜੀ ਦੀ ਬਹਾਦਰੀ ਤੋਂ ਖੁਸ਼ ਹੋ ਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਜ਼ਮੀਨ ਦਾ ਵੱਡਾ ਹਿੱਸਾ ਇਨਾਮ ਵਜੋਂ ਦਿੱਤਾ। ਧੋਖੇ ਨਾਲ ਪਿੱਠ ਪਿੱਛੋਂ ਗੋਲੀ ਚਲਾਏ ਜਾਣ ਕਾਰਨ ਬਾਬਾ ਜੀ ਸ਼ਹੀਦ ਹੋ ਗਏ। 
-                                ਅੱਜ ਵੀ ਉਨ੍ਹਾਂ ਦਾ ਪਰਿਵਾਰ ਹਰ ਸਾਲ 1 ਹਾੜ ਨੂੰ ਬਹੁਤ ਹੀ ਸ਼ਰਧਾ ਅਤੇ ਸਤਿਕਾਰ ਨਾਲ ਉਨ੍ਹਾਂ ਦੀ ਯਾਦ ਮਨਾਉਂਦਾ ਹੈ।
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- History Section -->
+        <section id="notes" class="section">
+            <div class="container">
+                <h2 class="text-center mb-5 display-5 gurmukhi-font">📝 ਮਹਾਨ ਇਤਿਹਾਸ</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="note-card">
+                            <h4 class="mb-4 text-warning gurmukhi-font">ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਬਾਰੇ ਜਾਣਕਾਰੀ</h4>
+                            <ul class="fs-5 gurmukhi-font" style="line-height: 2.2; list-style: none; padding-left: 0;">
+                                ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਿਹ \n ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਦਾ ਗੌਰਵਮਈ ਇਤਿਹਾਸ: \n ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ
+                                ਜੀ ਦਾ ਜਨਮ ਪਾਕਿਸਤਾਨ ਦੇ ਜ਼ਿਲ੍ਹਾ ਲਾਹੌਰ ਨੇੜੇ ਲੱਗਦੇ ਪਿੰਡ ਚੱਕ ਮੁਹੰਮਦੀ ਵਲੀ ਵਾਲਾ (ਲੱਖਾ ਹਵੇਲੀ ਦੇ ਨੇੜੇ) ਵਿਖੇ ਹੋਇਆ। ਬਾਅਦ ਵਿੱਚ
+                                ਇਹ ਸਥਾਨ 'ਪਿੰਡ ਗੁਰਸਾ ਸਿੰਘ ਵਾਲਾ' (ਸੋਧੀ ਵਾਲਾ ਸਟੇਸ਼ਨ, ਹੁਜਰਾ ਪੁਲਿਸ ਸਟੇਸ਼ਨ, ਤਹਿਸੀਲ ਦੀਪਾਲਪੁਰ, ਜ਼ਿਲ੍ਹਾ ਮੋਂਟਗੋਮੇਰੀ / ਹੁਣ ਸਹੀਵਾਲ,
+                                ਪਾਕਿਸਤਾਨ) ਵਜੋਂ ਜਾਣਿਆ ਗਿਆ, ਜੋ ਉਸ ਸਮੇਂ ਬਾਬਾ ਜੀ ਦੇ ਨਾਮ ਨਾਲ ਹੀ ਬਹੁਤ ਮਸ਼ਹੂਰ ਸੀ। ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਸ਼ੇਰ-ਏ-ਪੰਜਾਬ ਮਹਾਰਾਜਾ 
+                                ਰਣਜੀਤ ਸਿੰਘ ਜੀ ਦੇ ਸਮੇਂ ਹੋਏ ਹਨ। \n ਉਸ ਦੌਰ ਵਿੱਚ ਇੱਕ ਖੂੰਖਾਰ ਸ਼ੇਰ ਨੇ ਆਸ-ਪਾਸ ਦੇ ਪਿੰਡਾਂ ਵਿੱਚ ਭਾਰੀ ਦਹਿਸ਼ਤ ਮਚਾਈ ਹੋਈ ਸੀ ਅਤੇ ਲੋਕਾਂ
+                                ਦਾ ਜੀਣਾ ਦੁਸ਼ਵਾਰ ਕੀਤਾ ਹੋਇਆ ਸੀ। ਇਲਾਕੇ ਦੇ ਲੋਕਾਂ ਨੇ ਇਕੱਠੇ ਹੋ ਕੇ ਮਹਾਰਾਜਾ ਰਣਜੀਤ ਸਿੰਘ ਜੀ ਕੋਲ ਜਾ ਕੇ ਫਰਿਆਦ ਕੀਤੀ। ਮਹਾਰਾਜਾ ਸਾਹਿਬ
+                                ਨੇ ਆਲੇ-ਦੁਆਲੇ ਦੇ ਪਿੰਡਾਂ ਵਿੱਚ ਢੰਡੋਰਾ ਪਿਟਵਾਇਆ ਕਿ ਜੋ ਵੀ ਇਸ ਸ਼ੇਰ ਨੂੰ ਮਾਰੇਗਾ, ਉਸ ਨੂੰ ਮੂੰਹ-ਮੰਗਿਆ ਇਨਾਮ ਦਿੱਤਾ ਜਾਵੇਗਾ। \n ਜਦੋਂ ਇਹ
+                                ਖ਼ਬਰ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਤੱਕ ਪਹੁੰਚੀ, ਤਾਂ ਉਹਨਾਂ ਨੇ ਇਸ ਚੁਣੌਤੀ ਨੂੰ ਪ੍ਰਵਾਨ ਕੀਤਾ। ਉਹ ਆਪਣੇ ਘੋੜੇ 'ਤੇ ਸਵਾਰ ਹੋ ਕੇ ਜੰਗਲ ਵਿੱਚ ਗਏ ਅਤੇ
+                                ਸੁੱਤੇ ਹੋਏ ਸ਼ੇਰ ਨੂੰ ਲਲਕਾਰ ਕੇ ਬੜੀ ਬਹਾਦਰੀ ਨਾਲ ਉਸ ਦਾ ਮੁਕਾਬਲਾ ਕੀਤਾ ਅਤੇ ਉਸ ਨੂੰ ਮਾਰ ਮੁਕਾਇਆ। ਬਾਬਾ ਜੀ ਦੀ ਇਸ ਅਦੁੱਤੀ ਬਹਾਦਰੀ ਤੋਂ 
+                                ਪ੍ਰਸੰਨ ਹੋ ਕੇ ਮਹਾਰਾਜਾ ਰਣਜੀਤ ਸਿੰਘ ਜੀ ਨੇ ਉਹਨਾਂ ਨੂੰ ਤੋਹਫ਼ੇ ਵਜੋਂ ਇੱਕ ਉੱਤਮ ਘੋੜਾ ਦਿੱਤਾ ਅਤੇ ਕਿਹਾ ਕਿ ਸਵੇਰ ਤੋਂ ਸ਼ਾਮ ਤੱਕ ਇਹ ਘੋੜਾ ਜਿੰਨੀ ਵੀ 
+                                ਜ਼ਮੀਨ ਤੈਅ ਕਰੇਗਾ, ਉਹ ਸਾਰਾ ਇਲਾਕਾ ਤੁਹਾਡਾ ਹੋ ਜਾਵੇਗਾ। \n ਬਾਬਾ ਜੀ ਨੇ ਦਿਨ ਭਰ ਘੋੜਾ ਭਜਾਇਆ AND ਸ਼ਾਮ ਤੱਕ ਕਈ ਪਿੰਡਾਂ ਦਾ ਇਲਾਕਾ 
+                                ਆਪਣੇ ਅਧੀਨ ਕਰ ਲਿਆ। ਇਹ ਦੇਖ ਕੇ ਦੁਸ਼ਮਣਾਂ ਦੇ ਮਨ ਵਿੱਚ ਈਰਖਾ ਅਤੇ ਫ਼ਿਕਰ ਪੈਦਾ ਹੋ ਗਿਆ ਕਿ ਬਾਬਾ ਜੀ ਸਾਡਾ ਇਲਾਕਾ ਵੀ ਮੱਲ ਲੈਣਗੇ।
+                                ਉਹਨਾਂ ਨੇ ਧੋਖੇ ਦੀ ਨੀਤੀ ਅਪਣਾਈ ਅਤੇ ਇੱਕ ਫ਼ੌਜੀ ਨੂੰ ਟੋਏ (ਖੱਡੇ) ਵਿੱਚ ਛੁਪਾ ਕੇ ਬਿਠਾ ਦਿੱਤਾ। ਜਦੋਂ ਬਾਬਾ ਜੀ ਉੱਥੋਂ ਲੰਘੇ, ਤਾਂ ਉਸ ਨੇ ਧੋਖੇ ਨਾਲ
+                                ਪਿੱਠ ਪਿੱਛੋਂ ਗੋਲੀ ਚਲਾ ਕੇ ਵਾਰ ਕੀਤਾ, ਜਿਸ ਨਾਲ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਸ਼ਹੀਦੀ ਪ੍ਰਾਪਤ ਕਰ ਗਏ। \n ਆਪ ਜੀ ਦੀ ਸ਼ਹੀਦੀ ਤੋਂ ਬਾਅਦ,
+                                ਮਹਾਰਾਜਾ ਰਣਜੀਤ ਸਿੰਘ ਜੀ ਨੇ ਬਾਬਾ ਜੀ ਦੁਆਰਾ ਘੋੜਾ ਭਜਾ ਕੇ ਕਵਰ ਕੀਤੇ ਗਏ ਸਾਰੇ ਪਿੰਡਾਂ ਦੀਆਂ ਜ਼ਮੀਨਾਂ ਦਾ ਮਾਲਕਾਨਾ ਹੱਕ ਉਹਨਾਂ ਦੇ ਪਰਿਵਾਰ
+                                ਨੂੰ ਸੌਂਪ ਦਿੱਤਾ। ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ 1 ਹਾੜ ਨੂੰ ਸ਼ਹੀਦ ਹੋਏ ਸਨ। ਅੱਜ ਵੀ ਉਹਨਾਂ ਦਾ ਪਰਿਵਾਰ ਭਾਰਤ ਦੀ ਧਰਤੀ 'ਤੇ ਵੱਖ-ਵੱਖ ਪਿੰਡਾਂ ਵਿੱਚ ਵੱਸਦਾ ਹੈ 
+                                ਅਤੇ ਹਰ ਸਾਲ 1 ਹਾੜ ਨੂੰ ਸਾਰੇ ਮੈਂਬਰ ਇਕੱਠੇ ਹੋ ਕੇ ਆਪ ਜੀ ਦੀ ਨਿੱਘੀ ਯਾਦ ਬਹੁਤ ਹੀ ਸ਼ਰਧਾ, ਸਤਿਕਾਰ ਅਤੇ ਧੂਮਧਾਮ ਨਾਲ ਮਨਾਉਂਦੇ ਹਨ। 
+                                ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਿਹ।
 
-        <section id="gallery" class="section" style="background: rgba(14,14,18,0.97);">
-            <div class="container">
-                <h2 class="text-center mb-5 display-5">🖼️ ਪਵਿੱਤਰ ਗੈਲਰੀ</h2>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-5">
-                        <div class="note-card p-2 text-center">
-                            <img src="image_932e7a.jpg" class="gallery-img" alt="Baba Gursa Singh Ji">
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="note-card p-2 text-center">
-                            <img src="image_933564.jpg" class="gallery-img" alt="Baba Gursa Singh Ji">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                                ਪਰਿਵਾਰ ਅੱਜ ਵੀ ਉਨਾਂ ਦੀ ਯਾਦ ਵਿੱਚ ਇੱਕ ਹਾੜ ਨੂੰ ਉਹ ਸ਼ਹੀਦ ਹੋਏ ਸਨ ਤੇ ਅੱਜ ਵੀ ਉਨਾਂ ਦਾ ਪਰਿਵਾਰ ਇੱਕ ਹਾੜ ਨੂੰ ਉਹਨਾਂ ਦੀ ਯਾਦ ਮਨਾਉਂਦਾ ਹੈ ਅਤੇ ਅੱਜ ਉਹਨਾਂ ਦਾ ਪਰਿਵਾਰ ਭਾਰਤ ਦੀ ਧਰਤੀ ਤੇ ਵੀ ਰਹਿ ਰਿਹਾ ਹੈ ਕਈ ਪਿੰਡਾਂ ਦੇ ਵਿੱਚ ਵਸਦੇ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਦੇ ਪਰਿਵਾਰ ਦੇ ਮੈਂਬਰ ਇਕੱਠੇ ਹੋ ਕੇ ਉਹਨਾਂ ਦੀ ਯਾਦ ਮਨਾਉਂਦੇ ਹਨ। ਜੋ ਕਿ ਬੜੀ ਧੂਮਧਾਮ ਨਾਲ ਮਨਾਈ ਜਾਂਦੀ ਹੈ। ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਿਹ
+                            </ul>
+                            <hr class="my-4 border-warning">
+                            <p class="fst-italic text-light gurmukhi-font">"ਸ਼ਹੀਦ ਬਾਬਾ ਗੁਰਸਾ ਸਿੰਘ ਜੀ ਦੀ ਲਾਸਾਨੀ ਯਾਦ ਨੂੰ ਕੋਟਿ-ਕੋਟਿ ਪ੍ਰਣਾਮ।"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="video" class="section">
-            <div class="container">
-                <h2 class="text-center mb-5 display-5">📹 ਵੀਡੀਓ (Historical Video)</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="note-card p-2" style="overflow: hidden; border-radius: 20px;">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/fs0ll8sl948" title="History Video" allowfullscreen style="border-radius: 15px;"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+        <!-- Gallery Section -->
+        <section id="gallery" class="section" style="background: rgba(14,14,18,0.97);">
+            <div class="container">
+                <h2 class="text-center mb-5 display-5 gurmukhi-font">🖼️ ਪਵਿੱਤਰ ਗੈਲਰੀ (Gallery)</h2>
+                
+                <div class="row g-4">
+                    <!-- Gallery Item 1 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+1'">
+                        </div>
+                    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script>
-        const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 6.8;
+                    <!-- Gallery Item 2 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image2.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+2'">
+                        </div>
+                    </div>
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
+                    <!-- Gallery Item 3 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image3.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+3'">
+                        </div>
+                    </div>
 
-        scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-        const pointLight1 = new THREE.PointLight(0xffd700, 3, 100);
-        pointLight1.position.set(5, 5, 5);
-        scene.add(pointLight1);
-        
-        const pointLight2 = new THREE.PointLight(0xffffff, 1.5, 100);
-        pointLight2.position.set(-5, -5, 5);
-        scene.add(pointLight2);
+                    <!-- Gallery Item 4 -->
+                    <div class="col-md-6">
+                        <div class="note-card p-2 text-center">
+                            <img src="gallery-image4.jpg" class="gallery-img" alt="Baba Gursa Singh Ji" onerror="this.src='https://via.placeholder.com/800x500/19191e/f1c40f?text=Image+4'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        // Placeholder texture for 3D object
-        const textureLoader = new THREE.TextureLoader();
-        
-        // Removed explicit image requirement for 3D object to prevent errors
-        const geometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
-        const material = new THREE.MeshStandardMaterial({ color: 0xf1c40f, metalness: 0.8, roughness: 0.2 });
-        const obj = new THREE.Mesh(geometry, material);
-        scene.add(obj);
+        <!-- Video Section (Replaced Map) -->
+        <section id="video" class="section">
+            <div class="container">
+                <h2 class="text-center mb-5 display-5 gurmukhi-font">📹 ਵੀਡੀਓ (Historical Video)</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="note-card p-2" style="overflow: hidden; border-radius: 20px;">
+                            <!-- Responsive Big Video Box (16:9 Aspect Ratio) -->
+                            <div class="ratio ratio-16x9">
+                                <!-- Aap apni video file ka path 'src' mai add kar sakte hain ya YouTube link embed kar sakte hain -->
+                                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="History Video" allowfullscreen style="border-radius: 15px;"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-        let mouseX = 0, mouseY = 0;
-        window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-        });
+    <!-- Three.js 3D Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script>
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 6.8;
 
-        const clock = new THREE.Clock();
-        function animate() {
-            requestAnimationFrame(animate);
-            const t = clock.getElapsedTime();
-            obj.rotation.y = t * 0.6; 
-            obj.rotation.x = mouseY * 0.2;
-            obj.position.y = Math.sin(t * 1.5) * 0.12;
-            renderer.render(scene, camera);
-        }
-        animate();
-    </script>
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+
+        // Lights
+        scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+        const pointLight1 = new THREE.PointLight(0xffd700, 3, 100);
+        pointLight1.position.set(5, 5, 5);
+        scene.add(pointLight1);
+        
+        const pointLight2 = new THREE.PointLight(0xffffff, 1.5, 100);
+        pointLight2.position.set(-5, -5, 5);
+        scene.add(pointLight2);
+
+        // Texture Loading
+        const textureLoader = new THREE.TextureLoader();
+        const khandaTexture = textureLoader.load('khanda.png');
+
+        const khanda = new THREE.Mesh(
+            new THREE.PlaneGeometry(4.5, 4.5),
+            new THREE.MeshStandardMaterial({
+                map: khandaTexture,
+                transparent: true,
+                side: THREE.DoubleSide,
+                roughness: 0.1,
+                metalness: 0.8,
+                color: 0xffffff
+            })
+        );
+        scene.add(khanda);
+
+        let mouseX = 0, mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const t = clock.getElapsedTime();
+            
+            khanda.rotation.y = t * 0.6; 
+            khanda.rotation.x = mouseY * 0.2;
+            khanda.position.y = Math.sin(t * 1.5) * 0.12;
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
 </body>
 </html>
+<!-- BY NAVJOT SINGH -->
